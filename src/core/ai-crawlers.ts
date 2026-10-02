@@ -52,10 +52,30 @@ export const AI_CRAWLERS: AiCrawler[] = [
     token: 'ClaudeBot',
     operator: 'Anthropic',
     note: {
-      de: 'Crawler von Anthropic für Claude — liest Seiten, die Claude später zitieren kann.',
-      en: 'Anthropic crawler for Claude — reads pages Claude can later cite.',
+      de: 'Crawler von Anthropic für Claude - liest Seiten, die Claude später zitieren kann.',
+      en: 'Anthropic crawler for Claude - reads pages Claude can later cite.',
     },
     scored: true,
+    allowByDefault: true,
+  },
+  {
+    token: 'Claude-SearchBot',
+    operator: 'Anthropic',
+    note: {
+      de: 'Baut den Suchindex, aus dem Claude Quellen für Antworten zieht.',
+      en: 'Builds the search index Claude draws answer sources from.',
+    },
+    scored: false,
+    allowByDefault: true,
+  },
+  {
+    token: 'Claude-User',
+    operator: 'Anthropic',
+    note: {
+      de: 'Ruft eine Seite ab, wenn ein Mensch Claude im Chat danach fragt.',
+      en: 'Fetches a page when a person asks Claude about it in a chat.',
+    },
+    scored: false,
     allowByDefault: true,
   },
   {
@@ -69,11 +89,21 @@ export const AI_CRAWLERS: AiCrawler[] = [
     allowByDefault: true,
   },
   {
+    token: 'Perplexity-User',
+    operator: 'Perplexity',
+    note: {
+      de: 'Ruft eine Seite ab, wenn ein Mensch in Perplexity danach fragt.',
+      en: 'Fetches a page when a person asks about it in Perplexity.',
+    },
+    scored: false,
+    allowByDefault: true,
+  },
+  {
     token: 'Google-Extended',
     operator: 'Google',
     note: {
-      de: 'Steuert die Nutzung durch Gemini und KI-Übersichten. Sperren entfernt dich NICHT aus der normalen Google-Suche — dafür ist Googlebot zuständig.',
-      en: 'Controls use by Gemini and AI Overviews. Blocking it does NOT remove you from normal Google Search — that is Googlebot.',
+      de: 'Steuert die Nutzung für Gemini-Training und Grounding. Sperren entfernt dich NICHT aus der Google-Suche oder den KI-Übersichten - beides läuft über Googlebot.',
+      en: 'Controls use for Gemini training and grounding. Blocking it does NOT remove you from Google Search or AI Overviews - both run on Googlebot.',
     },
     scored: true,
     allowByDefault: true,
@@ -94,6 +124,16 @@ export const AI_CRAWLERS: AiCrawler[] = [
     note: {
       de: 'Crawler für Meta AI, den Assistenten in WhatsApp, Instagram und Facebook.',
       en: 'Crawler for Meta AI, the assistant inside WhatsApp, Instagram and Facebook.',
+    },
+    scored: false,
+    allowByDefault: true,
+  },
+  {
+    token: 'DuckAssistBot',
+    operator: 'DuckDuckGo',
+    note: {
+      de: 'Crawler für die KI-Antworten von DuckDuckGo (DuckAssist).',
+      en: 'Crawler behind DuckDuckGo AI answers (DuckAssist).',
     },
     scored: false,
     allowByDefault: true,
@@ -122,8 +162,8 @@ export const AI_CRAWLERS: AiCrawler[] = [
     token: 'Bytespider',
     operator: 'ByteDance',
     note: {
-      de: 'Crawler von ByteDance. Ignoriert robots.txt nach Berichten teilweise — wer ihn sperrt, sollte zusätzlich auf Serverebene blocken.',
-      en: 'ByteDance crawler. Reported to partly ignore robots.txt — if you block it, block at server level too.',
+      de: 'Crawler von ByteDance. Ignoriert robots.txt nach Berichten teilweise - wer ihn sperrt, sollte zusätzlich auf Serverebene blocken.',
+      en: 'ByteDance crawler. Reported to partly ignore robots.txt - if you block it, block at server level too.',
     },
     scored: false,
     allowByDefault: false,

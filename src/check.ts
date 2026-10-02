@@ -40,6 +40,7 @@ type Fetched = {
   responseMs: number | null
   finalUrl: string | null
   contentType: string | null
+  xRobotsTag?: string | null
 }
 
 async function get(url: string): Promise<Fetched> {
@@ -59,6 +60,7 @@ async function get(url: string): Promise<Fetched> {
       responseMs: Date.now() - startedAt,
       finalUrl: response.url || null,
       contentType: response.headers.get('content-type'),
+      xRobotsTag: response.headers.get('x-robots-tag'),
     }
   } catch {
     return { ok: false, status: null, body: '', responseMs: null, finalUrl: null, contentType: null }
@@ -120,6 +122,8 @@ export async function runCheck(rawUrl: string, lang: Lang = 'en'): Promise<Check
     renderedSource: 'direct',
     robotsTxt,
     llmsTxtFound: llmsTxt,
+    llmsTxtBody: llmsTxt ? llms.body : null,
+    xRobotsTag: page.xRobotsTag ?? null,
     lang,
   }
 
@@ -128,6 +132,7 @@ export async function runCheck(rawUrl: string, lang: Lang = 'en'): Promise<Check
     technicalFindings: technical.findings,
     html: page.body,
     url,
+    finalUrl: page.finalUrl ?? url,
     language: lang,
   })
 

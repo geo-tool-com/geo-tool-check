@@ -11,7 +11,7 @@
       "id": "reachable",
       "label": "Page reachable",
       "status": "fail",
-      "detail": "The page responds with HTTP 404 — AI crawlers cannot read it."
+      "detail": "The page responds with HTTP 404 - AI crawlers cannot read it."
     }
   ],
   "blockedCrawlers": [],

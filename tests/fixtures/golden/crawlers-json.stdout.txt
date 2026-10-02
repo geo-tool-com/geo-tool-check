@@ -28,7 +28,21 @@
       "operator": "Anthropic",
       "blocked": false,
       "countsTowardScore": true,
-      "note": "Anthropic crawler for Claude — reads pages Claude can later cite."
+      "note": "Anthropic crawler for Claude - reads pages Claude can later cite."
+    },
+    {
+      "token": "Claude-SearchBot",
+      "operator": "Anthropic",
+      "blocked": false,
+      "countsTowardScore": false,
+      "note": "Builds the search index Claude draws answer sources from."
+    },
+    {
+      "token": "Claude-User",
+      "operator": "Anthropic",
+      "blocked": false,
+      "countsTowardScore": false,
+      "note": "Fetches a page when a person asks Claude about it in a chat."
     },
     {
       "token": "PerplexityBot",
@@ -38,11 +52,18 @@
       "note": "Crawler behind Perplexity answers and their source lists."
     },
     {
+      "token": "Perplexity-User",
+      "operator": "Perplexity",
+      "blocked": false,
+      "countsTowardScore": false,
+      "note": "Fetches a page when a person asks about it in Perplexity."
+    },
+    {
       "token": "Google-Extended",
       "operator": "Google",
       "blocked": false,
       "countsTowardScore": true,
-      "note": "Controls use by Gemini and AI Overviews. Blocking it does NOT remove you from normal Google Search — that is Googlebot."
+      "note": "Controls use for Gemini training and grounding. Blocking it does NOT remove you from Google Search or AI Overviews - both run on Googlebot."
     },
     {
       "token": "Applebot-Extended",
@@ -57,6 +78,13 @@
       "blocked": false,
       "countsTowardScore": false,
       "note": "Crawler for Meta AI, the assistant inside WhatsApp, Instagram and Facebook."
+    },
+    {
+      "token": "DuckAssistBot",
+      "operator": "DuckDuckGo",
+      "blocked": false,
+      "countsTowardScore": false,
+      "note": "Crawler behind DuckDuckGo AI answers (DuckAssist)."
     },
     {
       "token": "CCBot",
@@ -77,7 +105,7 @@
       "operator": "ByteDance",
       "blocked": false,
       "countsTowardScore": false,
-      "note": "ByteDance crawler. Reported to partly ignore robots.txt — if you block it, block at server level too."
+      "note": "ByteDance crawler. Reported to partly ignore robots.txt - if you block it, block at server level too."
     }
   ]
 }

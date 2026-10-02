@@ -117,7 +117,7 @@ export async function callTool(name: string, args: Record<string, unknown>) {
           .split(/\n{2,}/)
           .map((block) => `<p>${block.trim().replace(/[<>&]/g, ' ')}</p>`)
           .join('\n')
-    const result = assessContentReadiness(html, { lang })
+    const result = assessContentReadiness(html, { lang, scope: 'fragment' })
     const words = args.content
       .replace(/<[^>]*>/g, ' ')
       .split(/\s+/)

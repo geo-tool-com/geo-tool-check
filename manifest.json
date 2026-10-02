@@ -2,7 +2,7 @@
   "manifest_version": "0.2",
   "name": "geo-tool-check",
   "display_name": "GEO Check — AI search readiness",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Check whether a page can be read and cited by ChatGPT, Perplexity, Claude and Google AI. Runs entirely on this machine — no API key, no account.",
   "long_description": "Three tools for AI search visibility. check_ai_readiness scores a public page across six categories using the same code that powers geo-tool.com. check_ai_crawlers reads a domain's robots.txt and reports which AI crawlers are blocked. check_citability scores a passage while drafting, without any network request.\n\nEvery fetch goes from this machine straight to the target site; nothing is sent to geo-tool.com. Node executes no JavaScript, so the result reflects what a plain HTML crawler sees — which is exactly what GPTBot, ClaudeBot and PerplexityBot see.",
   "author": {

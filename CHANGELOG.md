@@ -4,9 +4,21 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.1.0] - 2026-10-02
 
 ### Added
+
+- 13 new checks (37 in total, same score as geo-tool.com): snippet permission
+  (`nosnippet`, `max-snippet:0`, also via `X-Robots-Tag`), `Crawl-delay` and
+  declared sitemap in robots.txt, `html lang`, Open Graph link preview,
+  question-form headings, heading order, `main`/`article` landmark, JSON-LD
+  validity, Organization/Person with `sameAs`, WebSite node on the homepage,
+  article author as a Person, and links to legal notice/contact/about.
+- llms.txt is checked for substance (at least five lines and one link).
+- Crawler catalogue: Claude-SearchBot, Claude-User, Perplexity-User,
+  DuckAssistBot.
+- `check_citability` scores pasted text as a fragment and no longer expects
+  page-level signals from it.
 
 - Strict TypeScript, ESLint, Prettier, and a vitest suite with a local-only
   fixture server and network guard (no third-party calls in tests).

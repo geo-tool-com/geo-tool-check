@@ -1,1 +1,1 @@
-geo-tool-check: score 71 is below --min-score 99
+geo-tool-check: score 64 is below --min-score 99
