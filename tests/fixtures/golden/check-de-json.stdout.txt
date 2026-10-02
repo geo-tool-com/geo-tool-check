@@ -3,32 +3,32 @@
   "reachable": true,
   "httpStatus": 200,
   "responseMs": 0,
-  "score": 71,
+  "score": 64,
   "readiness": "Befriedigend",
   "breakdown": [
     {
       "category": "directAnswers",
-      "score": 19,
+      "score": 17,
       "maxScore": 25
     },
     {
       "category": "structure",
-      "score": 16,
+      "score": 17,
       "maxScore": 20
     },
     {
       "category": "schemaMarkup",
-      "score": 15,
+      "score": 11,
       "maxScore": 15
     },
     {
       "category": "citations",
-      "score": 5,
+      "score": 4,
       "maxScore": 15
     },
     {
       "category": "multimedia",
-      "score": 2,
+      "score": 1,
       "maxScore": 5
     },
     {
@@ -60,13 +60,31 @@
       "id": "indexable",
       "label": "Indexierbar",
       "status": "pass",
-      "detail": "Kein noindex — die Seite darf in Suche und KI-Antworten erscheinen."
+      "detail": "Kein noindex - die Seite darf in Suche und KI-Antworten erscheinen."
+    },
+    {
+      "id": "snippet",
+      "label": "Textauszüge erlaubt",
+      "status": "pass",
+      "detail": "Kein nosnippet oder max-snippet:0 - Text der Seite darf zitiert werden."
     },
     {
       "id": "ai-bots",
       "label": "KI-Crawler erlaubt",
       "status": "fail",
-      "detail": "robots.txt sperrt GPTBot komplett aus — diese KI-Suchen können die Seite nie zitieren."
+      "detail": "robots.txt sperrt GPTBot komplett aus - diese KI-Suchen können die Seite nie zitieren."
+    },
+    {
+      "id": "crawl-delay",
+      "label": "Kein Crawl-delay für Suchagenten",
+      "status": "pass",
+      "detail": "Kein Crawl-delay für Such- und KI-Suchagenten."
+    },
+    {
+      "id": "sitemap",
+      "label": "Sitemap angegeben",
+      "status": "warn",
+      "detail": "robots.txt nennt keine Sitemap - Crawler müssen neue Seiten allein über Links finden."
     },
     {
       "id": "title",
@@ -90,55 +108,79 @@
       "id": "canonical",
       "label": "Canonical",
       "status": "warn",
-      "detail": "Kein Canonical-Tag — Duplikate können die Zitierfähigkeit verwässern."
+      "detail": "Kein Canonical-Tag - Duplikate können die Zitierfähigkeit verwässern."
     },
     {
       "id": "schema",
       "label": "Strukturierte Daten (JSON-LD)",
       "status": "pass",
-      "detail": "Gefundene Typen: FAQPage, Question, Answer — FAQPage ist ideal für KI-Antworten."
+      "detail": "Gefundene Typen: FAQPage, Question, Answer - FAQPage ist ideal für KI-Antworten."
     },
     {
       "id": "llms-txt",
       "label": "llms.txt",
-      "status": "pass",
-      "detail": "llms.txt ist vorhanden — KI-Crawler bekommen kuratierten Kontext."
+      "status": "warn",
+      "detail": "llms.txt ist vorhanden, aber dünn (2 Zeilen) - sie sollte die Seiten verlinken, die KI-Systeme lesen sollen."
     },
     {
       "id": "content-volume",
       "label": "Lesbarer Inhalt",
       "status": "warn",
-      "detail": "146 Wörter — bei client-seitig gerenderten Seiten sehen Crawler ggf. fast nichts."
+      "detail": "146 Wörter - bei client-seitig gerenderten Seiten sehen Crawler ggf. fast nichts."
     },
     {
       "id": "js-visibility",
       "label": "Inhalt ohne JavaScript lesbar",
       "status": "pass",
-      "detail": "Der Inhalt steht im ausgelieferten HTML (146 Wörter) — auch ohne JavaScript lesbar."
+      "detail": "Der Inhalt steht im ausgelieferten HTML (146 Wörter) - auch ohne JavaScript lesbar."
     },
     {
       "id": "viewport",
       "label": "Mobile Viewport",
       "status": "warn",
-      "detail": "Kein Viewport-Meta — Mobil-Darstellung ist ein Ranking-Basissignal."
+      "detail": "Kein Viewport-Meta - Mobil-Darstellung ist ein Ranking-Basissignal."
+    },
+    {
+      "id": "html-lang",
+      "label": "Sprache angegeben",
+      "status": "pass",
+      "detail": "Die Seite gibt ihre Sprache mit \"en\" an."
+    },
+    {
+      "id": "social-preview",
+      "label": "Link-Vorschau (Open Graph)",
+      "status": "fail",
+      "detail": "Es fehlen: og:title, og:description, og:image - ohne sie erscheint eine verlinkte Quelle ohne Titel, Text oder Bild."
     },
     {
       "id": "suggestion",
       "label": "KI-Crawler erlaubt",
       "status": "fail",
-      "detail": "robots.txt sperrt GPTBot komplett aus — diese KI-Suchen können die Seite nie zitieren."
+      "detail": "robots.txt sperrt GPTBot komplett aus - diese KI-Suchen können die Seite nie zitieren."
+    },
+    {
+      "id": "suggestion",
+      "label": "Unternehmen oder Person ausgewiesen",
+      "status": "fail",
+      "detail": "Keine Organization oder Person in den strukturierten Daten - die Seite sagt Maschinen nicht, wer dahintersteht."
+    },
+    {
+      "id": "suggestion",
+      "label": "Wer hinter der Seite steht",
+      "status": "fail",
+      "detail": "Kein Link zu Impressum, Kontakt, Über uns oder Datenschutz - nichts zeigt, wer für den Inhalt einsteht."
+    },
+    {
+      "id": "suggestion",
+      "label": "Überschriften als Frage",
+      "status": "warn",
+      "detail": "1 von 3 H2-H4-Überschriften sind als Frage formuliert - ein paar mehr machen Abschnitte echten Fragen leichter zuordenbar."
     },
     {
       "id": "suggestion",
       "label": "FAQ-Bereich",
       "status": "warn",
-      "detail": "Kein FAQ-Bereich — Folgefragen sind der einfachste Weg in zusätzliche KI-Antworten."
-    },
-    {
-      "id": "suggestion",
-      "label": "Belege & Daten",
-      "status": "warn",
-      "detail": "0 externe Links, 1 konkrete Zahlen/Preise — KI-Antworten bevorzugen Seiten mit überprüfbaren Daten."
+      "detail": "Kein FAQ-Bereich - Folgefragen sind der einfachste Weg in zusätzliche KI-Antworten."
     }
   ],
   "blockedCrawlers": [

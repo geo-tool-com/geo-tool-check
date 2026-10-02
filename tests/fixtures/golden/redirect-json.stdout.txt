@@ -3,32 +3,32 @@
   "reachable": true,
   "httpStatus": 200,
   "responseMs": 0,
-  "score": 71,
+  "score": 64,
   "readiness": "Fair",
   "breakdown": [
     {
       "category": "directAnswers",
-      "score": 19,
+      "score": 17,
       "maxScore": 25
     },
     {
       "category": "structure",
-      "score": 16,
+      "score": 17,
       "maxScore": 20
     },
     {
       "category": "schemaMarkup",
-      "score": 15,
+      "score": 11,
       "maxScore": 15
     },
     {
       "category": "citations",
-      "score": 5,
+      "score": 4,
       "maxScore": 15
     },
     {
       "category": "multimedia",
-      "score": 2,
+      "score": 1,
       "maxScore": 5
     },
     {
@@ -60,13 +60,31 @@
       "id": "indexable",
       "label": "Indexable",
       "status": "pass",
-      "detail": "No noindex — the page may appear in search and AI answers."
+      "detail": "No noindex - the page may appear in search and AI answers."
+    },
+    {
+      "id": "snippet",
+      "label": "Snippets allowed",
+      "status": "pass",
+      "detail": "No nosnippet or max-snippet:0 - text from the page may be quoted."
     },
     {
       "id": "ai-bots",
       "label": "AI crawlers allowed",
       "status": "fail",
-      "detail": "robots.txt fully blocks GPTBot — these AI search engines can never cite the page."
+      "detail": "robots.txt fully blocks GPTBot - these AI search engines can never cite the page."
+    },
+    {
+      "id": "crawl-delay",
+      "label": "No crawl-delay for search agents",
+      "status": "pass",
+      "detail": "No Crawl-delay for search and AI search agents."
+    },
+    {
+      "id": "sitemap",
+      "label": "Sitemap declared",
+      "status": "warn",
+      "detail": "robots.txt declares no sitemap - crawlers have to find new pages through links alone."
     },
     {
       "id": "title",
@@ -90,55 +108,79 @@
       "id": "canonical",
       "label": "Canonical",
       "status": "warn",
-      "detail": "No canonical tag — duplicates can dilute citability."
+      "detail": "No canonical tag - duplicates can dilute citability."
     },
     {
       "id": "schema",
       "label": "Structured data (JSON-LD)",
       "status": "pass",
-      "detail": "Detected types: FAQPage, Question, Answer — FAQPage is ideal for AI answers."
+      "detail": "Detected types: FAQPage, Question, Answer - FAQPage is ideal for AI answers."
     },
     {
       "id": "llms-txt",
       "label": "llms.txt",
-      "status": "pass",
-      "detail": "llms.txt is present — AI crawlers get curated context."
+      "status": "warn",
+      "detail": "llms.txt is present but thin (2 lines) - it should link the pages AI systems are meant to read."
     },
     {
       "id": "content-volume",
       "label": "Readable content",
       "status": "warn",
-      "detail": "146 words — on client-side rendered pages crawlers may see almost nothing."
+      "detail": "146 words - on client-side rendered pages crawlers may see almost nothing."
     },
     {
       "id": "js-visibility",
       "label": "Content readable without JavaScript",
       "status": "pass",
-      "detail": "The content is in the delivered HTML (146 words) — readable without JavaScript."
+      "detail": "The content is in the delivered HTML (146 words) - readable without JavaScript."
     },
     {
       "id": "viewport",
       "label": "Mobile viewport",
       "status": "warn",
-      "detail": "No viewport meta — mobile rendering is a baseline ranking signal."
+      "detail": "No viewport meta - mobile rendering is a baseline ranking signal."
+    },
+    {
+      "id": "html-lang",
+      "label": "Language declared",
+      "status": "pass",
+      "detail": "The page declares its language as \"en\"."
+    },
+    {
+      "id": "social-preview",
+      "label": "Link preview (Open Graph)",
+      "status": "fail",
+      "detail": "Missing: og:title, og:description, og:image - without them a linked source shows up without title, text or image."
     },
     {
       "id": "suggestion",
       "label": "AI crawlers allowed",
       "status": "fail",
-      "detail": "robots.txt fully blocks GPTBot — these AI search engines can never cite the page."
+      "detail": "robots.txt fully blocks GPTBot - these AI search engines can never cite the page."
+    },
+    {
+      "id": "suggestion",
+      "label": "Organization or person declared",
+      "status": "fail",
+      "detail": "No Organization or Person in the structured data - the page does not tell machines who is behind it."
+    },
+    {
+      "id": "suggestion",
+      "label": "Who is behind the page",
+      "status": "fail",
+      "detail": "No link to a legal notice, contact, about or privacy page - nothing shows who is accountable for the content."
+    },
+    {
+      "id": "suggestion",
+      "label": "Headings phrased as questions",
+      "status": "warn",
+      "detail": "1 of 3 H2-H4 headings are phrased as a question - a few more make sections easier to match to real questions."
     },
     {
       "id": "suggestion",
       "label": "FAQ section",
       "status": "warn",
-      "detail": "No FAQ section — follow-up questions are the easiest way into additional AI answers."
-    },
-    {
-      "id": "suggestion",
-      "label": "Evidence & data",
-      "status": "warn",
-      "detail": "0 external links, 1 concrete numbers/prices — AI answers prefer pages with verifiable data."
+      "detail": "No FAQ section - follow-up questions are the easiest way into additional AI answers."
     }
   ],
   "blockedCrawlers": [

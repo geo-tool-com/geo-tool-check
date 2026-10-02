@@ -4,10 +4,14 @@ http://127.0.0.1:PORT
   OAI-SearchBot        allowed  OpenAI
   ChatGPT-User         allowed  OpenAI
   ClaudeBot            allowed  Anthropic
+  Claude-SearchBot     allowed  Anthropic
+  Claude-User          allowed  Anthropic
   PerplexityBot        allowed  Perplexity
+  Perplexity-User      allowed  Perplexity
   Google-Extended      allowed  Google
   Applebot-Extended    allowed  Apple
   meta-externalagent   allowed  Meta
+  DuckAssistBot        allowed  DuckDuckGo
   CCBot                allowed  Common Crawl
   Amazonbot            allowed  Amazon
   Bytespider           allowed  ByteDance
